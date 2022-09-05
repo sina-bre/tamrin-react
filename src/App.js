@@ -39,12 +39,12 @@ function App() {
     event.preventDefault();
     setData([...data, { name: enteredName, age: enteredAge }]);
   };
+  const deleteItem = () => {
+    setData([...data, { name: enteredName, age: enteredAge }]);
+  };
   useEffect(() => {
     console.log(data);
   }, [data]);
-  const updateName = (value) => {
-    setData([...data, { name: value, age: enteredAge }]);
-  };
   return (
     <div>
       <div>
@@ -59,7 +59,7 @@ function App() {
         Submit
       </button>
 
-      <Card1 data={data} updateName={updateName} />
+      <Card1 data={data} setData={setData} />
       {/* <ul>
       {data.map((item, index) => (
           <li key={item.id}>{item.name}</li>
